@@ -10,6 +10,13 @@ from phonnx.utils.onnx_parsing import (
 from phonnx.utils.types import onnx_to_numpy_type
 from phonnx.col_preprocessors import MAP
 
+from onnxruntime_extensions import get_library_path as _get_extensions_library_path
+
+import phonnx.cuops  # noqa
+
+_so = ort.SessionOptions()
+_so.register_custom_ops_library(_get_extensions_library_path())
+
 
 class Runtime:
     """
@@ -21,7 +28,7 @@ class Runtime:
         self.model_path = None
         if isinstance(model, str) and not model.endswith(".onnx"):
             self.model_path = model
-        self.ort_session = ort.InferenceSession(model)
+        self.ort_session = ort.InferenceSession(model, _so)
 
     def run(
         self,
@@ -40,7 +47,8 @@ class Runtime:
         dynattrs : Dict[str, np.ndarray], optional
             Dynamic attributes, by default None
         outputs_to_return : str, optional
-            when set to "all", all onnx output nodes will be returned; when "final" only the last layer outputs are returned, by default "final"
+            when set to "all", all onnx output nodes will be returned;
+            when "final" only the last layer outputs are returned, by default "final"
 
         Returns
         -------

@@ -1,0 +1,6 @@
+from phonnx.cuops.llm.gpt_chat_completion import gpt_chat_completion_v1
+from phonnx.cuops.llm.universal_text_completion import universal_completion_v1
+from phonnx.cuops.llm.universal_text_embedding import universal_embedding_v1
+from phonnx.cuops.llm.vertex_chat_completion import vertex_chat_completion_v1
+from phonnx.cuops.strings.json_extractor import string_json_label_extractor_v1
+from phonnx.cuops.strings.string_formatter import string_template_formatter_v1
