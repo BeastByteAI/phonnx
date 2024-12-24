@@ -1,3 +1,9 @@
+
+
+> [!WARNING]
+> PHONNX was deprecated in favor of [FNNX](https://github.com/BeastByteAI/fnnx)
+
+
 <h1 align="center">
   <br>
  <img src="https://github.com/BeastByteAI/.github/blob/main/phonnx_logo.png?raw=true" alt="AgentDingo" width="200" height = "200">
@@ -19,9 +25,6 @@
     <img src="https://dcbadge.vercel.app/api/server/YDAbwuWK7V?compact=true&style=flat">
   </a>
 </p>
-
-*PHONNX is being actively developed. While it is stable and can be used in production, many of the planned features are not yet implemented. We aim to complete v1 by an estimated timeframe of Q2 2024.*
-
 ## What is PHONNX?
 
 PHONNX (pronounced as 'phoenix') is a python wrapper arround [ONNX Runtime](https://onnxruntime.ai/) that provides several additional features, such as custom operators or automatic input preprocessing.
